@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap");
-.ref {
-  position: absolute;
-  opacity: 0.4;
-  display: none;
-}
-
 .container, .title h1, form, form div, form input, form button {
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;

@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap");
 
-.ref {
-  position: absolute;
-  opacity: 0.4;
-  display: none;
-}
-
 $Red: hsl(0, 100%, 74%);
 $Green: hsl(154, 59%, 51%);
 $Blue: hsl(248, 32%, 49%);
@@ -147,8 +141,7 @@ form {
     outline: none;
     border-radius: 0.3rem;
     border: 1px solid rgba(black, 0.1);
-    background: transparent no-repeat center right -2rem
-        url("../images/icon-error.svg");
+    background: transparent no-repeat center right -2rem url("../images/icon-error.svg");
     caret-color: $Blue;
     @extend %transition;
 
