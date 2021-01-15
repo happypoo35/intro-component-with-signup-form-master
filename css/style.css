@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap");
+.ref {
+  position: absolute;
+  opacity: 0.4;
+  display: none;
+}
+
+.container, .title h1, form, form div, form input, form button {
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background: #ff7a7a no-repeat center url("../images/bg-intro-desktop.png");
+  background-size: cover;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1110px;
+  margin: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    margin: 6rem 1.5rem 4rem 1.5rem;
+  }
+}
+
+.title {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.title h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: 0.01rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 540px) {
+  .title h1 {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.title p {
+  line-height: 1.65;
+}
+
+.promo {
+  background: #6055a5;
+  padding: 1rem 4rem;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.2);
+          box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.2);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.promo p {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  letter-spacing: -0.02rem;
+}
+
+.promo span {
+  color: white;
+  font-weight: 600;
+}
+
+form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0.6rem;
+  -webkit-box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.2);
+          box-shadow: 0 0.5rem 0 rgba(62, 60, 73, 0.2);
+}
+
+@media screen and (max-width: 540px) {
+  form {
+    padding: 1.5rem;
+  }
+}
+
+form div {
+  margin-bottom: 1.2rem;
+}
+
+@media screen and (max-width: 540px) {
+  form div {
+    margin-bottom: 1rem;
+  }
+}
+
+form input {
+  width: 100%;
+  padding: 1rem 3.5rem 1rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #3e3c49;
+  outline: none;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent no-repeat center right -2rem url("../images/icon-error.svg");
+  caret-color: #6055a5;
+}
+
+form input.error {
+  border: 1px solid #ff7a7a;
+  background: transparent no-repeat center right 1.5rem url("../images/icon-error.svg");
+  color: #ff7a7a;
+}
+
+form input.error:hover {
+  border: 1px solid rgba(255, 122, 122, 0.6);
+}
+
+form input.error:focus {
+  border: 1px solid #ff7a7a;
+}
+
+@media screen and (max-width: 540px) {
+  form input {
+    padding: 1rem 3.5rem 1rem 1.2rem;
+  }
+}
+
+form input::-webkit-input-placeholder {
+  opacity: 0.7;
+}
+
+form input:-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+form input::-ms-input-placeholder {
+  opacity: 0.7;
+}
+
+form input::placeholder {
+  opacity: 0.7;
+}
+
+form input:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+form input:focus {
+  border: 1px solid #6055a5;
+}
+
+form label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  font-style: italic;
+  text-align: right;
+  color: #ff7a7a;
+  width: 100%;
+  display: none;
+}
+
+form button {
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  width: 100%;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  padding: 1rem 1rem 0.8rem;
+  background: #38cc8c;
+  border-bottom: 0.3rem solid #2eb279;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 540px) {
+  form button {
+    margin-bottom: 0.8rem;
+  }
+}
+
+form button:hover {
+  background: #89e1bb;
+  border-bottom: 0.3rem solid #61d6a3;
+}
+
+form button:active {
+  background: #4dd198;
+  border-bottom: 0.3rem solid #30bb7f;
+}
+
+form p {
+  font-size: 0.7rem;
+  text-align: center;
+  color: #b9b6d3;
+}
+
+@media screen and (max-width: 540px) {
+  form p {
+    padding: 0 1.3rem;
+  }
+}
+
+form a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #ff7a7a;
+}
+
+form a:hover {
+  border-bottom: 1px solid #ff7a7a;
+}
+/*# sourceMappingURL=style.css.map */

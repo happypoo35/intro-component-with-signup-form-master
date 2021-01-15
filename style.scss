@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,500&display=swap");
+
+.ref {
+  position: absolute;
+  opacity: 0.4;
+  display: none;
+}
+
+$Red: hsl(0, 100%, 74%);
+$Green: hsl(154, 59%, 51%);
+$Blue: hsl(248, 32%, 49%);
+$Dark-Blue: hsl(249, 10%, 26%);
+$Grayish-Blue: hsl(246, 25%, 77%);
+
+%transition {
+  transition: 0.3s linear;
+}
+
+$tablet: 1000px;
+$mobile: 540px;
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  background: $Red no-repeat center url("../images/bg-intro-desktop.png");
+  background-size: cover;
+}
+
+body,
+input,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 1110px;
+  margin: 2rem;
+  @extend %transition;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 2rem;
+  }
+
+  @include mobile {
+    margin: 6rem 1.5rem 4rem 1.5rem;
+  }
+}
+
+.title {
+  color: white;
+
+  @include tablet {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    letter-spacing: 0.01rem;
+    margin-bottom: 2rem;
+    @extend %transition;
+
+    @include mobile {
+      font-size: 1.7rem;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  p {
+    line-height: 1.65;
+  }
+}
+
+.promo {
+  background: $Blue;
+  padding: 1rem 4rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 0 rgba($Dark-Blue, 0.2);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+
+  p {
+    color: rgba(white, 0.8);
+    text-align: center;
+    letter-spacing: -0.02rem;
+  }
+
+  span {
+    color: white;
+    font-weight: 600;
+  }
+}
+
+form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.5rem 0 rgba($Dark-Blue, 0.2);
+  @extend %transition;
+
+  @include mobile {
+    padding: 1.5rem;
+  }
+
+  div {
+    margin-bottom: 1.2rem;
+    @extend %transition;
+
+    @include mobile {
+      margin-bottom: 1rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem 3.5rem 1rem 1.8rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $Dark-Blue;
+    outline: none;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(black, 0.1);
+    background: transparent no-repeat center right -2rem
+        url("../images/icon-error.svg");
+    caret-color: $Blue;
+    @extend %transition;
+
+    &.error {
+      border: 1px solid $Red;
+      background: transparent no-repeat center right 1.5rem
+        url("../images/icon-error.svg");
+      color: $Red;
+
+      &:hover {
+        border: 1px solid rgba($Red, 0.6);
+      }
+      &:focus {
+        border: 1px solid $Red;
+      }
+    }
+
+    @include mobile {
+      padding: 1rem 3.5rem 1rem 1.2rem;
+    }
+
+    &::placeholder {
+      opacity: 0.7;
+    }
+
+    &:hover {
+      border: 1px solid rgba(black, 0.3);
+    }
+    &:focus {
+      border: 1px solid $Blue;
+    }
+  }
+
+  label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    font-style: italic;
+    text-align: right;
+    color: $Red;
+    width: 100%;
+    display: none;
+  }
+
+  button {
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    width: 100%;
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    padding: 1rem 1rem 0.8rem;
+    background: $Green;
+    border-bottom: 0.3rem solid darken($Green, 7%);
+    margin-bottom: 1rem;
+    @extend %transition;
+
+    @include mobile {
+      margin-bottom: 0.8rem;
+    }
+
+    &:hover {
+      background: lighten($Green, 20%);
+      border-bottom: 0.3rem solid lighten($Green, 10%);
+    }
+
+    &:active {
+      background: lighten($Green, 5%);
+      border-bottom: 0.3rem solid darken($Green, 5%);
+    }
+  }
+
+  p {
+    font-size: 0.7rem;
+    text-align: center;
+    color: $Grayish-Blue;
+
+    @include mobile {
+      padding: 0 1.3rem;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $Red;
+
+    &:hover {
+      border-bottom: 1px solid $Red;
+    }
+  }
+}
